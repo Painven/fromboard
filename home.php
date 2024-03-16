@@ -31,19 +31,8 @@ Template Name: home
                         Посчитайте, сколько будет стоить перевозка <br />
                         покупки из зарубежа
                     </p>
-                    <form class="calc-form" action="">
-                        <input type="text" name="name" placeholder="Имя" />
-                        <input type="text" name="email" placeholder="Почта" />
-                        <input type="text" name="phone" placeholder="Телефон" />
-                        <input type="text" name="area-m2" placeholder="Общая площадь, м²" />
-                        <input type="text" name="weight-kg" placeholder="Вес, кг" />
-                        <input type="text" name="customer-country" placeholder="Страна покупки" />
-                        <input type="text" name="customer-city" placeholder="Город покупки" />
-                        <input type="text" name="delivery-region" placeholder="Область доставки" />
-                        <input type="text" name="delivery-city" placeholder="Город доставки" />
-                        <button class="calc-form-submit" type="submit">
-                            Заказать расчет
-                        </button>
+                    <form class="calc-form">
+                        <?php echo do_shortcode('[contact-form-7 id="3b0d340" title="Калькулятор доставки"]'); ?>
                     </form>
                 </div>
             </div>

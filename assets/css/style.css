@@ -237,20 +237,21 @@ body {
   line-height: 24px;
 }
 
-.calc-form {
+.calc-form > div > p {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
   margin-top: 8px; /* gap 24 - 16 */
 }
 
-.calc-form input[name="name"],
-.calc-form .calc-form-submit {
+.calc-form p span:first-child,
+.calc-form input:last-child {
   grid-column: 1 / span 2;
 }
 
 form input,
 form textarea {
+  width: 100%;
   padding: 12px;
   border-radius: 4px;
   border: 2px solid black;
@@ -258,7 +259,7 @@ form textarea {
   line-height: 24px;
 }
 
-form > button[type="submit"] {
+form input[type="submit"] {
   display: flex;
   font-size: 20px;
   line-height: 28px;

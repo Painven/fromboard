@@ -14,7 +14,7 @@
             <div class="header-container">
                 <div class="header-top">
                     <div class="header-top-logo">
-                        <img src="wp-content/themes/fromboard/assets/images/logo.svg " />
+                        <?php the_custom_logo(); ?>
                         <p>FromBoard Delivery</p>
                     </div>
                     <div class="header-top-info">
