@@ -152,6 +152,13 @@ body {
   line-height: 28px;
   font-weight: bold;
 }
+.header-call-btn:hover,
+.sertificates-show-more-btn:hover,
+form input[type="submit"]:hover {
+  background: royalblue;
+  transition: 150ms ease-in-out;
+}
+
 .sertificates-show-more-btn {
   padding: 20px 40px;
   border-radius: 12px;
@@ -400,10 +407,9 @@ form input[type="submit"] {
   align-items: center;
 }
 .reviews__footer .quote-symbol {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   display: block;
+  width: 63px;
+  height: 45px;
   color: #ede9fe;
 }
 

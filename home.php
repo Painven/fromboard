@@ -177,7 +177,7 @@ Template Name: home
                     <div class="reviews__footer">
                         <p class="reviews__author"><?php the_title(); ?></p>
                         <span class="quote-symbol"
-                            style="background-image: url('<?php bloginfo('template_url'); ?>/assets/block-quotes.svg');"></span>
+                            style="background-image: url('<?php bloginfo('template_url'); ?>/assets/images/block-quotes.svg');"></span>
                     </div>
                 </div>
 
