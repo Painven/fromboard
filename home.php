@@ -136,30 +136,28 @@ Template Name: home
                 Мы предоставляем вам надёжность и уверенность
             </p>
             <div class="sertificates_gallery">
+                <?php
+                global $post;
+
+                $myposts = get_posts([
+                    'numberposts' => 4,
+                    'offset'      => 0,
+                    'category'    => 3
+                ]);
+
+                if( $myposts ){
+                    foreach( $myposts as $post ){
+                        setup_postdata( $post );
+                        ?>
+
                 <div class="sertificate_item">
-                    <a data-lightbox="cert_group"
-                        href="<?php bloginfo('template_url'); ?>/assets/images/sertificates/sert-1.png"><img
-                            src="<?php bloginfo('template_url'); ?>/assets/images/sertificates/sert-1.png" /></a>
-                    <p>Свидетельство о регистрации в РФ</p>
+                    <a data-lightbox="cert_group" href="<?php the_post_thumbnail_url(); ?>"><img
+                            src="<?php the_post_thumbnail_url(); ?>" />
+                    </a>
+                    <p><?php the_title(); ?></p>
                 </div>
-                <div class="sertificate_item">
-                    <a data-lightbox="cert_group"
-                        href="<?php bloginfo('template_url'); ?>/assets/images/sertificates/sert-2.png"><img
-                            src="<?php bloginfo('template_url'); ?>/assets/images/sertificates/sert-2.png" /></a>
-                    <p>Свидетельство о регистрации в США</p>
-                </div>
-                <div class="sertificate_item">
-                    <a data-lightbox="cert_group"
-                        href="<?php bloginfo('template_url'); ?>/assets/images/sertificates/sert-3.png"><img
-                            src="<?php bloginfo('template_url'); ?>/assets/images/sertificates/sert-3.png" /></a>
-                    <p>Свидетельство о регистрации в Китае</p>
-                </div>
-                <div class="sertificate_item">
-                    <a data-lightbox="cert_group"
-                        href="<?php bloginfo('template_url'); ?>/assets/images/sertificates/sert-4.png"><img
-                            src="<?php bloginfo('template_url'); ?>/assets/images/sertificates/sert-4.png" /></a>
-                    <p>Свидетельство о регистрации в Великобритании</p>
-                </div>
+
+                <?php } } wp_reset_postdata(); ?>
             </div>
             <div>
                 <a class="sertificates-show-more-btn" href="#">Показать больше документов</a>
@@ -168,62 +166,33 @@ Template Name: home
         <div class="main-content__reviews">
             <h2 class="section-title">Отзывы</h2>
             <div class="reviews reviews__slick">
+
+                <?php
+                global $post;
+
+                $myposts = get_posts([
+                    'numberposts' => 4,
+                    'offset'      => 1,
+                    'category'    => 2
+                ]);
+
+                if( $myposts ){
+                    foreach( $myposts as $post ){
+                        setup_postdata( $post );
+                        ?>
+
                 <div class="reviews__item">
                     <div class="reviews__body">
-                        <p class="reviews__text">
-                            Я заказала последний iPhone из США через ваш сервис,
-                            и доставка прошла быстро и без каких‑либо проблем. Гарантии
-                            качества и надёжная упаковка сделали мой опыт покупки
-                            невероятно позитивным
-                        </p>
+                        <?php the_content(); ?>
                     </div>
                     <div class="reviews__footer">
-                        <p class="reviews__author">Анна</p>
-                        <span class="quote-symbol"></span>
+                        <p class="reviews__author"><?php the_title(); ?></p>
+                        <span class="quote-symbol"
+                            style="background-image: url('<?php bloginfo('template_url'); ?>/assets/block-quotes.svg');"></span>
                     </div>
                 </div>
-                <div class="reviews__item">
-                    <div class="reviews__body">
-                        <p class="reviews__text">
-                            Я заказала последний iPhone из США через ваш сервис,
-                            и доставка прошла быстро и без каких‑либо проблем. Гарантии
-                            качества и надёжная упаковка сделали мой опыт покупки
-                            невероятно позитивным
-                        </p>
-                    </div>
-                    <div class="reviews__footer">
-                        <p class="reviews__author">Алексей</p>
-                        <span class="quote-symbol"></span>
-                    </div>
-                </div>
-                <div class="reviews__item">
-                    <div class="reviews__body">
-                        <p class="reviews__text">
-                            Я заказала последний iPhone из США через ваш сервис,
-                            и доставка прошла быстро и без каких‑либо проблем. Гарантии
-                            качества и надёжная упаковка сделали мой опыт покупки
-                            невероятно позитивным
-                        </p>
-                    </div>
-                    <div class="reviews__footer">
-                        <p class="reviews__author">Анна</p>
-                        <span class="quote-symbol"></span>
-                    </div>
-                </div>
-                <div class="reviews__item">
-                    <div class="reviews__body">
-                        <p class="reviews__text">
-                            Я заказала последний iPhone из США через ваш сервис,
-                            и доставка прошла быстро и без каких‑либо проблем. Гарантии
-                            качества и надёжная упаковка сделали мой опыт покупки
-                            невероятно позитивным
-                        </p>
-                    </div>
-                    <div class="reviews__footer">
-                        <p class="reviews__author">Алексей</p>
-                        <span class="quote-symbol"></span>
-                    </div>
-                </div>
+
+                <?php } } wp_reset_postdata(); ?>
             </div>
         </div>
         <div class="main-content__callback">

@@ -382,7 +382,7 @@ form > button[type="submit"] {
   margin-top: 12px;
 }
 
-.reviews__text {
+.reviews__body > p {
   font-size: 24px;
   line-height: 32px;
   font-weight: bold;
@@ -402,11 +402,7 @@ form > button[type="submit"] {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.reviews__footer .quote-symbol::after {
   display: block;
-  content: url(/src/assets/block-quotes.svg);
   color: #ede9fe;
 }
 
