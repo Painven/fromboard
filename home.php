@@ -131,7 +131,9 @@ Template Name: home
                 $myposts = get_posts([
                     'numberposts' => 4,
                     'offset'      => 0,
-                    'category'    => 3
+                    'category'    => 3,
+                    'orderby'     => 'ID',
+                    'order'       => 'ASC'
                 ]);
 
                 if( $myposts ){
@@ -149,7 +151,36 @@ Template Name: home
                 <?php } } wp_reset_postdata(); ?>
             </div>
             <div>
-                <a class="sertificates-show-more-btn" href="#">Показать больше документов</a>
+                <a class="sertificates-show-more-btn" id="show-more-certificates">Показать больше
+                    документов</a>
+                <div id="additional-sertificates-container">
+                    <div class="sertificates_gallery">
+                        <?php
+                global $post;
+
+                $myposts = get_posts([
+                    'numberposts' => 4,
+                    'offset'      => 4,
+                    'category'    => 3,
+                    'orderby'     => 'ID',
+                    'order'       => 'ASC'
+                ]);
+
+                if( $myposts ){
+                    foreach( $myposts as $post ){
+                        setup_postdata( $post );
+                        ?>
+
+                        <div class="sertificate_item">
+                            <a data-lightbox="cert_group" href="<?php the_post_thumbnail_url(); ?>"><img
+                                    src="<?php the_post_thumbnail_url(); ?>" />
+                            </a>
+                            <p><?php the_title(); ?></p>
+                        </div>
+
+                        <?php } } wp_reset_postdata(); ?>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="main-content__reviews">
@@ -161,8 +192,8 @@ Template Name: home
 
                 $myposts = get_posts([
                     'numberposts' => 4,
-                    'offset'      => 1,
-                    'category'    => 2
+                    'offset'      => 0,
+                    'category'    => 2,
                 ]);
 
                 if( $myposts ){
@@ -187,13 +218,8 @@ Template Name: home
         <div class="main-content__callback">
             <h2 class="section-title">Остались вопросы?</h2>
             <div class="callback_container">
-                <form class="callback__questions" action="/">
-                    <input type="text" name="callback_name" placeholder="Имя" />
-                    <input type="text" name="callback_email" placeholder="Почта" />
-                    <input type="text" name="callback_phone" placeholder="Телефон" />
-                    <input type="text" name="callback_subject" placeholder="Тема вопроса" />
-                    <textarea name="callback_message" placeholder="Сообщение"></textarea>
-                    <button type="submit">Отправить заявку</button>
+                <form class="callback__questions">
+                    <?php echo do_shortcode('[contact-form-7 id="a714b94" title="Остались вопросы?"]'); ?>
                 </form>
             </div>
         </div>

@@ -164,6 +164,13 @@ form input[type="submit"]:hover {
   border-radius: 12px;
 }
 
+#additional-sertificates-container {
+  display: none;
+}
+#additional-sertificates-container[show] {
+  display: block;
+}
+
 .header-top-logo {
   display: flex;
   justify-content: start;
@@ -426,16 +433,16 @@ form input[type="submit"] {
   margin-top: 32px;
 }
 
-.callback__questions {
+.callback__questions > div > p {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
 }
 
-.callback__questions > textarea {
+.callback__questions span:has(textarea) {
   grid-column: span 2;
 }
-.callback__questions > button {
+.callback__questions input[type="submit"] {
   grid-column: span 2;
 }
 

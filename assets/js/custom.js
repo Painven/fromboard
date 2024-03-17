@@ -1,6 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
   InitializeSlick();
   InitializeLightbox();
+
+  document
+    .querySelector("#show-more-certificates")
+    .addEventListener("click", (e) => {
+      const addCertContainer = document.querySelector(
+        "#additional-sertificates-container"
+      );
+      addCertContainer.toggleAttribute("show");
+      e.target.style.display = "none";
+    });
 });
 
 function InitializeSlick() {
