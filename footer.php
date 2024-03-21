@@ -13,15 +13,17 @@
             <div class="footer__menu">
                 <nav>
                     <ul>
-                        <li><a href="#">Калькулятор</a></li>
-                        <li><a href="#">О нас</a></li>
-                        <li><a href="#">Гарантии</a></li>
-                        <li><a href="#">Отзывы</a></li>
+                        <li><a href="#calc-section-start">Калькулятор</a></li>
+                        <li><a href="#features-section-start">О нас</a></li>
+                        <li><a href="#sertificates-section-start">Гарантии</a></li>
+                        <li><a href="#reviews-section-start">Отзывы</a></li>
                     </ul>
                 </nav>
             </div>
             <div class="footer__phone">
-                <p><a href="tel:+78001234567">+7 (800) 123 45-67</a></p>
+                <p><a
+                        href="tel:<?php the_field_numbers_only('phone-number'); ?>"><?php the_field('phone-number'); ?></a>
+                </p>
                 <p>Звонки по России бесплатны</p>
             </div>
         </div>

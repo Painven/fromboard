@@ -81,3 +81,10 @@ add_action( 'wp_enqueue_scripts', function() {
     wp_enqueue_script( 'lightbox', 'https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js');
     wp_enqueue_script( 'custom', get_template_directory_uri() . '/assets/js/custom.js');
 });
+
+function the_field_numbers_only($fieldName){
+	$fieldValue = get_field($fieldName);
+	$fieldDigitsOnly = preg_match_all('/[0-9]+/', $fieldValue, $matches);
+  
+	echo implode('', $matches[0]);
+}

@@ -547,3 +547,7 @@ form input[type="submit"] {
   color: #6b7280;
   min-width: 200px;
 }
+
+#popmake-60 form input {
+  margin-bottom: 20px;
+}

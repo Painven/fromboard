@@ -12,21 +12,18 @@ Template Name: home
         <div class="main-container__top">
             <div class="main-container__top-news">
                 <p class="top-news-title">
-                    Без проблемная доставка купленных вещей из США, Европы и Азии
-                    в Россию
+                    <?php the_field('main-banner-title'); ?>
                 </p>
                 <p class="top-news-description">
-                    Сэкономьте на покупках и наслаждайтесь мировыми брендами —
-                    наш сервис позволяет вам легко и удобно заказывать товары
-                    со всего мира и получать их в России
+                    <?php the_field('main-banner-description'); ?>
                 </p>
                 <div class="top-news-banner">
-                    <img src="<?php bloginfo('template_url'); ?>/assets/images/main-banner.png" />
+                    <img src="<?php the_field('main-banner-image'); ?>" />
                 </div>
             </div>
             <div class="main-content__top-calc">
                 <div class="main-content__top-calc-container">
-                    <h2>Калькулятор доставки</h2>
+                    <h2 id="calc-section-start">Калькулятор доставки</h2>
                     <p>
                         Посчитайте, сколько будет стоить перевозка <br />
                         покупки из зарубежа
@@ -38,7 +35,7 @@ Template Name: home
             </div>
         </div>
         <div class="main-content__features">
-            <h2 class="section-title">Наши преимущества</h2>
+            <h2 class="section-title" id="features-section-start">Наши преимущества</h2>
             <div class="features">
                 <div class="features__item">
                     <div class="img-container">
@@ -116,7 +113,7 @@ Template Name: home
             </div>
         </div>
         <div class="main-content__sertificates">
-            <h2 class="section-title">Гарантии качества</h2>
+            <h2 class="section-title" id="sertificates-section-start">Гарантии качества</h2>
             <p>
                 Наши гарантии качества включают в себя полный спектр документов,
                 необходимых <br />
@@ -184,7 +181,7 @@ Template Name: home
             </div>
         </div>
         <div class="main-content__reviews">
-            <h2 class="section-title">Отзывы</h2>
+            <h2 class="section-title" id="reviews-section-start">Отзывы</h2>
             <div class="reviews reviews__slick">
 
                 <?php
